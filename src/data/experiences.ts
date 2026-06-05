@@ -111,16 +111,6 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    company: "Google Developer Students Clubs",
-    role: "Campus Lead",
-    dates: "August 2020 — August 2022",
-    highlights: [
-      "Facilitated a peer learning environment at Strathmore University through 9 workshops and talks.",
-      "Built connections with industry professionals and strengthened the campus developer community.",
-    ],
-    tech: ["Community", "Leadership", "Workshops", "Mentorship"],
-  },
-  {
     company: "AMT Technologies",
     role: "Backend Software Development Intern",
     dates: "February 2022 — April 2022",

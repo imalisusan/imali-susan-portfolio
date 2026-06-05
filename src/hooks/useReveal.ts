@@ -15,8 +15,14 @@ export function useReveal({
   useEffect(() => {
     if (visible) return;
 
-    const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
-    if (reduce) return;
+    const reduce =
+      window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches ?? false;
+    const supportsIntersectionObserver = "IntersectionObserver" in window;
+
+    if (reduce || !supportsIntersectionObserver) {
+      const raf = requestAnimationFrame(() => setVisible(true));
+      return () => cancelAnimationFrame(raf);
+    }
 
     const el = ref.current;
     if (!el) return;

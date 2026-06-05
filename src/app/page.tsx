@@ -4,8 +4,10 @@ import { ContactSection } from "@/components/sections/ContactSection";
 import { EducationSection } from "@/components/sections/EducationSection";
 import { ExperienceSection } from "@/components/sections/ExperienceSection";
 import { Hero } from "@/components/sections/Hero";
+import { LeadershipSection } from "@/components/sections/LeadershipSection";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { RevelationSection } from "@/components/sections/RevelationSection";
+import { SocialFollowSection } from "@/components/sections/SocialFollowSection";
 import { WebsitesSection } from "@/components/sections/WebsitesSection";
 
 export default function Home() {
@@ -20,7 +22,9 @@ export default function Home() {
             <ProjectsSection />
             <WebsitesSection />
             <RevelationSection />
+            <LeadershipSection />
             <EducationSection />
+            <SocialFollowSection />
             <ContactSection />
           </div>
         </div>

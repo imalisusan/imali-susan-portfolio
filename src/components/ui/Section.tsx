@@ -18,9 +18,7 @@ export function Section({
           <div className="h-px flex-1 bg-[linear-gradient(90deg,var(--color-border),var(--color-accent),var(--color-border))] opacity-70" />
         </div>
       </Reveal>
-      <div className="mt-6">
-        <Reveal delayMs={90}>{children}</Reveal>
-      </div>
+      <div className="mt-6">{children}</div>
     </section>
   );
 }
