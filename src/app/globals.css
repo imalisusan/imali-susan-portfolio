@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fbf7ff;
+  --foreground: #0b0b0f;
+  --surface: #ffffff;
+  --muted: #f4eaff;
+  --border: #e3cff6;
+  --accent: #b57edc;
+  --accent-2: #7c3aed;
+  --accent-3: #ec4899;
+  --accent-soft: #ead7ff;
+  --accent-foreground: #2a083e;
+  --ring: rgba(181, 126, 220, 0.55);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-accent-3: var(--accent-3);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-ring: var(--ring);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 30%, white);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 3px;
+  border-radius: 14px;
+}
+
+@keyframes floaty {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 12px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.anim-float {
+  animation: floaty 8s ease-in-out infinite;
+}
+
+.anim-float-slow {
+  animation: floaty 12s ease-in-out infinite;
+}
+
+.anim-fade-up {
+  animation: fadeUp 700ms cubic-bezier(0.21, 0.84, 0.32, 1) both;
+}
+
+.anim-shimmer {
+  background-size: 200% 200%;
+  animation: shimmer 10s ease infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-float,
+  .anim-float-slow,
+  .anim-fade-up,
+  .anim-shimmer {
+    animation: none !important;
+  }
+}
