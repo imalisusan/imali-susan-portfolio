@@ -8,6 +8,7 @@ import { LeadershipSection } from "@/components/sections/LeadershipSection";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { RevelationSection } from "@/components/sections/RevelationSection";
 import { SocialFollowSection } from "@/components/sections/SocialFollowSection";
+import { SupportSection } from "@/components/sections/SupportSection";
 import { WebsitesSection } from "@/components/sections/WebsitesSection";
 
 export default function Home() {
@@ -26,6 +27,7 @@ export default function Home() {
             <EducationSection />
             <SocialFollowSection />
             <ContactSection />
+            <SupportSection />
           </div>
         </div>
       </main>
