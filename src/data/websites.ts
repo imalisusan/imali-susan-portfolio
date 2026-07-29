@@ -4,28 +4,28 @@ export const websites: Project[] = [
   {
     name: "Neuroguard Neuromonitoring Solutions",
     description:
-      "Corporate healthcare website built with WordPress and Elementor, showcasing intraoperative neuromonitoring services, training, and company expertise through a responsive, professional design.",
+      "Professional healthcare website developed with WordPress and Elementor, showcasing neuromonitoring services, company information, and medical expertise through a clean and responsive digital presence.",
     href: "https://ngneuromonitoring.co.ke/",
     tech: ["WordPress", "Elementor", "Plugins", "SEO"],
   },
   {
     name: "Pets Paradise",
     description:
-      "Comprehensive pet care website built with WordPress and Elementor, featuring service pages, online booking, blog content, and a responsive experience for pet owners.",
+      "Pet care website built with WordPress and Elementor, providing an online platform to showcase veterinary services, pet wellness information, and customer resources.",
     href: "https://petsparadise.co.ke/",
     tech: ["WordPress", "Elementor", "Plugins"],
   },
   {
     name: "Wellness Wonders",
     description:
-      "Health and wellness website developed with WordPress and Elementor, designed to present wellness programs, educational content, and services with an intuitive, mobile-friendly interface.",
+      "Veterinary clinic website developed with WordPress and Elementor, designed to highlight pet healthcare services, clinic information, and resources for pet owners through a user-friendly experience.",
     href: "https://wellnesswonders.co.ke/",
     tech: ["WordPress", "Elementor", "Plugins"],
   },
   {
     name: "Simba Energy",
     description:
-      "Corporate website developed with WordPress and Elementor, highlighting the company's fuel products, energy solutions, nationwide station network, and business services through a modern, responsive interface.",
+      "Personal brand website developed for Simba Energy, a high-energy MC, hype man, dancer, and cultural host. The platform showcases his services, performances, testimonials, availability, and booking experience for events worldwide.",
     href: "https://simba-energy.com/",
     tech: ["WordPress", "Elementor", "Plugins"],
   },
