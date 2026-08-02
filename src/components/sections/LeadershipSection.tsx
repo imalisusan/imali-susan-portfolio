@@ -1,45 +1,46 @@
 import { leadership } from "@/data/leadership";
-import { Chip } from "@/components/ui/Chip";
+import { TechList } from "@/components/ui/Chip";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
-import { Card } from "@/components/ui/Card";
 
 export function LeadershipSection() {
   return (
-    <Section id="leadership" title="Leadership & Community">
-      <div className="grid gap-6">
+    <Section id="leadership" index="04" tone="indigo" title="Leadership">
+      <div className="grid gap-px">
         {leadership.map((item, index) => (
           <Reveal
             key={`${item.company}-${item.role}-${item.dates}`}
-            delayMs={index * 70}
+            delayMs={index * 60}
           >
-            <Card className="p-7 transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-[0_14px_38px_-28px_rgba(181,126,220,0.6)]">
-              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
-                <div>
-                  <h3 className="text-lg font-semibold tracking-tight">
-                    {item.role}
-                  </h3>
-                  <div className="mt-1 text-sm text-foreground/80">
-                    {item.company}
-                  </div>
-                </div>
-                <div className="text-sm font-medium text-foreground/70">
-                  {item.dates}
-                </div>
+            <article className="grid gap-x-10 gap-y-3 border-t border-rule py-8 sm:grid-cols-[12rem_1fr]">
+              <div className="label pt-1 leading-4 text-balance text-ink-3">
+                {item.dates}
               </div>
 
-              <ul className="mt-4 grid list-disc gap-2 pl-5 text-sm leading-6 text-foreground/80">
-                {item.highlights.map((h) => (
-                  <li key={h}>{h}</li>
-                ))}
-              </ul>
+              <div>
+                <h3 className="text-[1.0625rem] font-semibold tracking-tight text-ink">
+                  {item.role}
+                </h3>
+                <p className="mt-1 text-[0.9375rem] text-indigo">
+                  {item.company}
+                </p>
 
-              <div className="mt-5 flex flex-wrap gap-2">
-                {item.tech.map((t) => (
-                  <Chip key={t}>{t}</Chip>
-                ))}
+                <ul className="mt-4 grid gap-2.5">
+                  {item.highlights.map((highlight) => (
+                    <li
+                      key={highlight}
+                      className="relative pl-5 text-[0.9375rem] leading-7 text-ink-2 before:absolute before:left-0 before:top-[0.85em] before:h-px before:w-2.5 before:bg-rule-2"
+                    >
+                      {highlight}
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-5">
+                  <TechList items={item.tech} />
+                </div>
               </div>
-            </Card>
+            </article>
           </Reveal>
         ))}
       </div>
