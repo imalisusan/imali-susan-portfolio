@@ -7,58 +7,53 @@ const facts = [
 export function Hero() {
   return (
     <div className="relative overflow-hidden border-b border-rule">
-      {/* Three soft washes from the accent family rather than one flat bloom —
-          enough colour movement to feel warm, all well below text contrast. */}
+      {/* One soft wash. Three of them read as a product launch page. */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -top-48 left-[-12%] h-[40rem] w-[40rem] rounded-full bg-plum-tint opacity-70 blur-3xl"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -top-32 left-[22%] h-[32rem] w-[32rem] rounded-full bg-rose-tint opacity-60 blur-3xl"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -bottom-56 right-[-8%] h-[36rem] w-[36rem] rounded-full bg-gold-tint opacity-50 blur-3xl"
+        className="pointer-events-none absolute -top-48 left-[-12%] h-[38rem] w-[38rem] rounded-full bg-plum-tint opacity-60 blur-3xl"
       />
 
-      <div className="relative mx-auto w-full max-w-5xl px-6 pb-16 pt-20 sm:pb-24 sm:pt-28">
-        <div className="anim-rise">
-          <p className="label flex items-center gap-2.5 text-ink-3">
-            <span
-              aria-hidden="true"
-              className="inline-block h-1.5 w-1.5 rounded-full bg-rose"
-            />
-            Full-stack Engineer · Kenya
-          </p>
+      <div className="relative mx-auto w-full max-w-5xl px-6 pb-16 pt-20 sm:pb-24 sm:pt-24">
+        {/* Staggered entrance rather than one block fading in together. */}
+        <h1 className="display anim-rise max-w-3xl text-[clamp(2rem,4.5vw,3rem)] leading-[1.05]">
+          Hi, I’m Susan.{" "}
+          <span className="anim-wave" role="img" aria-label="waving hand">
+            👋
+          </span>
+        </h1>
 
-          <h1 className="display mt-7 max-w-3xl text-[clamp(2.5rem,7vw,4.5rem)] leading-[0.98]">
-            I build the systems behind billing, payments, and operations.
-          </h1>
+        <p
+          className="anim-rise mt-6 max-w-xl text-base leading-8 text-ink-2"
+          style={{ animationDelay: "90ms" }}
+        >
+          I’m a full-stack developer in Kenya. I work mostly in Laravel and PHP,
+          building backends and internal tools — billing systems for water
+          utilities, a point-of-sale platform, insurance portals, and donor
+          systems at Compassion International.
+        </p>
 
-          <p className="mt-8 max-w-xl text-base leading-8 text-ink-2">
-            Laravel and PHP across utility billing, point-of-sale, insurance and
-            donor management — backend services, REST APIs, and the dashboards
-            teams actually work in. Shipped with Pest and PHPUnit.
-          </p>
-
-          <div className="mt-10 flex flex-wrap items-center gap-3">
-            <a
-              href="#work"
-              className="label pill bg-plum text-white transition-colors duration-200 hover:bg-rose"
-            >
-              See the work
-            </a>
-            <a
-              href="#contact"
-              className="label pill border border-plum-line bg-surface text-plum transition-colors duration-200 hover:border-plum hover:bg-plum-tint"
-            >
-              Get in touch
-            </a>
-          </div>
+        <div
+          className="anim-rise mt-9 flex flex-wrap items-center gap-3"
+          style={{ animationDelay: "180ms" }}
+        >
+          <a
+            href="#work"
+            className="label pill bg-plum text-white hover:bg-rose"
+          >
+            See the work
+          </a>
+          <a
+            href="#contact"
+            className="label pill border border-plum-line bg-surface text-plum hover:border-plum hover:bg-plum-tint"
+          >
+            Get in touch
+          </a>
         </div>
 
-        <dl className="mt-16 grid gap-8 border-t border-rule pt-8 sm:grid-cols-3">
+        <dl
+          className="anim-rise mt-16 grid gap-8 border-t border-rule pt-8 sm:grid-cols-3"
+          style={{ animationDelay: "270ms" }}
+        >
           {facts.map((fact) => (
             <div key={fact.label}>
               <dt className="label text-ink-3">{fact.label}</dt>

@@ -71,10 +71,20 @@ export function MobileNav({ links }: { links: readonly NavLink[] }) {
           document.body,
         )}
 
+      {/* Kept mounted so it can transition. `inert` (not `hidden`) does the
+          accessibility work while closed — it drops the panel out of the
+          a11y tree and out of the tab order, which `hidden` would do too but
+          without allowing any animation. */}
       <div
         id={panelId}
-        hidden={!open}
-        className="absolute inset-x-0 top-full z-50 border-b border-rule bg-paper shadow-[var(--shadow-card)] sm:hidden"
+        inert={!open}
+        className={[
+          "absolute inset-x-0 top-full z-50 origin-top border-b border-rule bg-paper shadow-[var(--shadow-card)]",
+          "transition-[opacity,translate] duration-250 ease-[cubic-bezier(0.16,1,0.3,1)] sm:hidden",
+          open
+            ? "translate-y-0 opacity-100"
+            : "pointer-events-none -translate-y-2 opacity-0",
+        ].join(" ")}
       >
         <nav className="mx-auto w-full max-w-5xl px-6 py-2">
           <ul className="flex flex-col">

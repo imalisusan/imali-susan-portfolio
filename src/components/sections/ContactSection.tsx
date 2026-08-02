@@ -57,7 +57,7 @@ export function ContactSection() {
 
           <a
             href="mailto:susanimali52@gmail.com"
-            className="label pill mt-10 bg-plum text-white transition-colors duration-200 hover:bg-rose"
+            className="label pill mt-10 bg-plum text-white hover:bg-rose"
           >
             Start a conversation
           </a>

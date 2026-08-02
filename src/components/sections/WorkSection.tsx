@@ -57,7 +57,10 @@ export function WorkSection() {
         </div>
       </Reveal>
 
-      <div className="grid gap-4 sm:grid-cols-2">
+      {/* Keyed on the filter so every card remounts and re-runs its reveal —
+          otherwise cards common to two filters keep their identity and the
+          switch happens with no transition at all. */}
+      <div key={filter} className="grid gap-4 sm:grid-cols-2">
         {/* Keyed on name, not href — Shuzia Books and iTestify share a URL. */}
         {items.map((item, index) => (
           <Reveal
@@ -77,7 +80,7 @@ export function WorkSection() {
                   </h3>
                   <span
                     aria-hidden="true"
-                    className="mt-0.5 shrink-0 text-ink-3 transition-[color,transform] duration-300 group-hover:translate-x-0.5 group-hover:text-plum motion-reduce:group-hover:translate-x-0"
+                    className="mt-0.5 shrink-0 text-ink-3 transition-[color,translate] duration-300 group-hover:translate-x-0.5 group-hover:text-plum motion-reduce:group-hover:translate-x-0"
                   >
                     <svg
                       viewBox="0 0 16 16"

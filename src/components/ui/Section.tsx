@@ -50,7 +50,8 @@ export function Section({
           <h2 className="display shrink-0 text-2xl sm:text-3xl">{title}</h2>
           <span
             aria-hidden="true"
-            className={`h-px min-w-8 flex-1 translate-y-[-0.35rem] bg-gradient-to-r via-rule to-transparent ${ruleClasses[tone]}`}
+            className={`rule-draw h-px min-w-8 flex-1 bg-gradient-to-r via-rule to-transparent ${ruleClasses[tone]}`}
+            style={{ marginBottom: "0.35rem" }}
           />
         </header>
         {lede && (

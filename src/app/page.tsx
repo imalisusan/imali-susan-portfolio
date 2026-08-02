@@ -7,7 +7,6 @@ import { ExperienceSection } from "@/components/sections/ExperienceSection";
 import { Hero } from "@/components/sections/Hero";
 import { LeadershipSection } from "@/components/sections/LeadershipSection";
 import { SocialFollowSection } from "@/components/sections/SocialFollowSection";
-import { SupportSection } from "@/components/sections/SupportSection";
 import { WorkSection } from "@/components/sections/WorkSection";
 
 export default function Home() {
@@ -28,7 +27,6 @@ export default function Home() {
             <EducationSection />
             <SocialFollowSection />
             <ContactSection />
-            <SupportSection />
           </div>
         </div>
       </main>

@@ -212,6 +212,21 @@
     padding-left: 1rem;
     padding-right: calc(1rem - 0.14em);
   }
+
+  /* Declared here rather than as utilities on each button so the transform
+     transition is not clobbered by a `transition-colors` utility, which would
+     win the cascade from @layer utilities. */
+  .pill,
+  .pill-sm {
+    transition-property: background-color, border-color, color, transform;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .pill:hover,
+  .pill-sm:hover {
+    transform: translateY(-1px);
+  }
 }
 
 /* Fine film grain. Self-contained SVG turbulence — no network request. */
@@ -250,13 +265,67 @@
   animation: rise 800ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
+/* The greeting's waving hand. Runs a few times and then rests — an infinite
+   wave turns into a distraction sitting at the top of every scroll. */
+@keyframes wave {
+  0%,
+  55%,
+  100% {
+    transform: rotate(0deg);
+  }
+  10%,
+  30% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  40% {
+    transform: rotate(9deg);
+  }
+  48% {
+    transform: rotate(-4deg);
+  }
+}
+
+.anim-wave {
+  display: inline-block;
+  transform-origin: 70% 80%;
+  animation: wave 2.6s ease-in-out 900ms 3;
+}
+
+/* Section hairlines draw left-to-right as each section scrolls into view.
+   Driven by the data-revealed flag that Reveal sets. */
+.rule-draw {
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 900ms cubic-bezier(0.16, 1, 0.3, 1) 150ms;
+}
+
+[data-revealed="true"] .rule-draw {
+  transform: scaleX(1);
+}
+
+/* Without scripting Reveal never flips the flag, so show the rules outright. */
+@media (scripting: none) {
+  .rule-draw {
+    transform: none !important;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
 
-  .anim-rise {
+  .anim-rise,
+  .anim-wave {
     animation: none !important;
+  }
+
+  .pill:hover,
+  .pill-sm:hover {
+    transform: none;
   }
 
   *,

@@ -76,7 +76,7 @@ export function CommunitySection() {
                 href="https://revelationcollective.org"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="label pill bg-rose text-white transition-colors duration-200 hover:bg-plum"
+                className="label pill bg-rose text-white hover:bg-plum"
               >
                 revelationcollective.org
               </a>

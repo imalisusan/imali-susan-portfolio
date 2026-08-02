@@ -35,7 +35,7 @@ export function Header() {
         <div className="flex items-center gap-2">
           <a
             href="#contact"
-            className="label pill-sm bg-plum text-white transition-colors duration-200 hover:bg-rose"
+            className="label pill-sm bg-plum text-white hover:bg-rose"
           >
             Get in touch
           </a>

@@ -15,7 +15,7 @@ export function Card({
       className={[
         "rounded-2xl border border-rule bg-surface shadow-[var(--shadow-card)]",
         interactive &&
-          "transition-[border-color,box-shadow,transform] duration-300 group-hover:-translate-y-0.5 group-hover:border-rule-2 group-hover:shadow-[var(--shadow-lift)] motion-reduce:group-hover:translate-y-0",
+          "transition-[border-color,box-shadow,translate] duration-300 group-hover:-translate-y-0.5 group-hover:border-rule-2 group-hover:shadow-[var(--shadow-lift)] motion-reduce:group-hover:translate-y-0",
         className,
       ]
         .filter(Boolean)
