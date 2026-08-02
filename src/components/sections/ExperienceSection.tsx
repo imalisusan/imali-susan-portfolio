@@ -1,65 +1,54 @@
 import { experiences } from "@/data/experiences";
-import { Chip } from "@/components/ui/Chip";
+import { TechList } from "@/components/ui/Chip";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
 
 export function ExperienceSection() {
   return (
-    <Section id="experience" title="Experience">
-      <div className="grid gap-6">
+    <Section
+      id="experience"
+      index="02"
+      tone="teal"
+      title="Experience"
+      lede="Eight roles across contracting, product teams and internships — mostly backend, mostly Laravel, consistently test-driven."
+    >
+      <div className="grid gap-px">
         {experiences.map((exp, index) => (
           <Reveal
             key={`${exp.company}-${exp.role}-${exp.dates}`}
-            delayMs={index * 70}
+            delayMs={Math.min(index, 4) * 60}
           >
-            <article
-              className={[
-                "relative overflow-hidden rounded-3xl border border-border p-7",
-                "transition-transform duration-200 hover:-translate-y-0.5",
-                "hover:shadow-[0_14px_38px_-28px_rgba(181,126,220,0.55)]",
-                index % 2 === 0 ? "bg-surface" : "bg-muted",
-              ].join(" ")}
-            >
-              <div
-                className={[
-                  "pointer-events-none absolute left-0 top-0 h-full w-1",
-                  index % 2 === 0 ? "bg-accent" : "bg-accent-2",
-                ].join(" ")}
-              />
-              <div
-                className={[
-                  "pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full blur-2xl",
-                  index % 2 === 0
-                    ? "bg-[rgba(181,126,220,0.18)]"
-                    : "bg-[rgba(124,58,237,0.14)]",
-                ].join(" ")}
-              />
+            <article className="group grid gap-x-10 gap-y-3 py-8 sm:grid-cols-[12rem_1fr]">
+              <div className="label pt-1 leading-4 text-balance text-ink-3">
+                {exp.dates}
+              </div>
 
-              <div className="relative">
-                <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
-                  <div>
-                    <h3 className="text-lg font-semibold tracking-tight">
-                      {exp.role}
-                    </h3>
-                    <div className="mt-1 text-sm text-foreground/80">
-                      {exp.company}
-                    </div>
-                  </div>
-                  <div className="text-sm font-medium text-foreground/70">
-                    {exp.dates}
-                  </div>
-                </div>
+              <div className="relative border-l border-rule pl-7 sm:pl-8">
+                <span
+                  aria-hidden="true"
+                  className="absolute -left-[3px] top-2 h-1.5 w-1.5 rounded-full bg-rule-2 transition-colors duration-300 group-hover:bg-teal"
+                />
 
-                <ul className="mt-4 grid list-disc gap-2 pl-5 text-sm leading-6 text-foreground/80">
+                <h3 className="text-[1.0625rem] font-semibold tracking-tight text-ink">
+                  {exp.role}
+                </h3>
+                <p className="mt-1 text-[0.9375rem] text-teal">
+                  {exp.company}
+                </p>
+
+                <ul className="mt-4 grid gap-2.5">
                   {exp.highlights.map((item) => (
-                    <li key={item}>{item}</li>
+                    <li
+                      key={item}
+                      className="relative pl-5 text-[0.9375rem] leading-7 text-ink-2 before:absolute before:left-0 before:top-[0.85em] before:h-px before:w-2.5 before:bg-rule-2"
+                    >
+                      {item}
+                    </li>
                   ))}
                 </ul>
 
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {exp.tech.map((t) => (
-                    <Chip key={t}>{t}</Chip>
-                  ))}
+                <div className="mt-5">
+                  <TechList items={exp.tech} />
                 </div>
               </div>
             </article>

@@ -1,108 +1,269 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fbf7ff;
-  --foreground: #0b0b0f;
+  color-scheme: light;
+
+  /* Surfaces — soft warm white with a blush cast */
+  --paper: #fffcfa;
   --surface: #ffffff;
-  --muted: #f4eaff;
-  --border: #e3cff6;
-  --accent: #b57edc;
-  --accent-2: #7c3aed;
-  --accent-3: #ec4899;
-  --accent-soft: #ead7ff;
-  --accent-foreground: #2a083e;
-  --ring: rgba(181, 126, 220, 0.55);
+  --surface-2: #fbf4f1;
+
+  /* Text. Ink is a deep warm plum rather than near-black, which keeps the
+     page from feeling heavy while still reading at 14.6:1. */
+  --ink: #2e2430;
+  --ink-2: #5f5461;
+  --ink-3: #756978;
+
+  --rule: #f0e6e4;
+  --rule-2: #e0d2d0;
+
+  /* Six-hue accent family plus a neutral. Every tint sits within 0.03
+     luminance of the others and every text colour within 0.05, so a row of
+     mixed tags reads as one palette instead of confetti. */
+  --plum: #834673;
+  --plum-tint: #f5ecf3;
+  --plum-line: #e7d5e3;
+
+  --rose: #a83a5b;
+  --rose-tint: #fcebf0;
+  --rose-line: #f3d5df;
+
+  --terracotta: #a54d28;
+  --terracotta-tint: #fbede6;
+  --terracotta-line: #f2dacd;
+
+  --teal: #2a6e67;
+  --teal-tint: #e7f3f1;
+  --teal-line: #cfe5e1;
+
+  --gold: #8a6320;
+  --gold-tint: #f9f0df;
+  --gold-line: #efe0c4;
+
+  --indigo: #454fa0;
+  --indigo-tint: #edeff9;
+  --indigo-line: #dadef0;
+
+  --neutral: #6b6169;
+  --neutral-tint: #f5f1ef;
+  --neutral-line: #e8dfdc;
+
+  /* Tag pills. Every tag shares one neutral pill; the category hue survives
+     only as a low-chroma tint in the text — roughly 60% less colourful than
+     the full-strength hues above, so a dense row of tags reads as a quiet
+     line rather than a stripe of colour. */
+  --tag-bg: #faf6f4;
+  --tag-line: #efe7e4;
+
+  --plum-muted: #63495d;
+  --rose-muted: #6e4a55;
+  --terracotta-muted: #6b5241;
+  --teal-muted: #3d5a56;
+  --gold-muted: #5f5236;
+  --indigo-muted: #4a4e66;
+  --neutral-muted: #5f5461;
+
+  /* Plum is the primary brand accent. */
+  --accent: var(--plum);
+  --accent-tint: var(--plum-tint);
+  --accent-line: var(--plum-line);
+
+  --ring: rgba(131, 70, 115, 0.5);
+
+  --shadow-card: 0 1px 2px rgba(46, 36, 48, 0.04),
+    0 8px 24px -16px rgba(46, 36, 48, 0.14);
+  --shadow-lift: 0 2px 4px rgba(46, 36, 48, 0.05),
+    0 18px 40px -24px rgba(46, 36, 48, 0.22);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-paper: var(--paper);
   --color-surface: var(--surface);
-  --color-muted: var(--muted);
-  --color-border: var(--border);
+  --color-surface-2: var(--surface-2);
+
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+
+  --color-rule: var(--rule);
+  --color-rule-2: var(--rule-2);
+
+  --color-plum: var(--plum);
+  --color-plum-tint: var(--plum-tint);
+  --color-plum-line: var(--plum-line);
+
+  --color-rose: var(--rose);
+  --color-rose-tint: var(--rose-tint);
+  --color-rose-line: var(--rose-line);
+
+  --color-terracotta: var(--terracotta);
+  --color-terracotta-tint: var(--terracotta-tint);
+  --color-terracotta-line: var(--terracotta-line);
+
+  --color-teal: var(--teal);
+  --color-teal-tint: var(--teal-tint);
+  --color-teal-line: var(--teal-line);
+
+  --color-gold: var(--gold);
+  --color-gold-tint: var(--gold-tint);
+  --color-gold-line: var(--gold-line);
+
+  --color-indigo: var(--indigo);
+  --color-indigo-tint: var(--indigo-tint);
+  --color-indigo-line: var(--indigo-line);
+
+  --color-neutral: var(--neutral);
+  --color-neutral-tint: var(--neutral-tint);
+  --color-neutral-line: var(--neutral-line);
+
   --color-accent: var(--accent);
-  --color-accent-2: var(--accent-2);
-  --color-accent-3: var(--accent-3);
-  --color-accent-soft: var(--accent-soft);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-ring: var(--ring);
+  --color-accent-tint: var(--accent-tint);
+  --color-accent-line: var(--accent-line);
+
+  --color-tag-bg: var(--tag-bg);
+  --color-tag-line: var(--tag-line);
+
+  --color-plum-muted: var(--plum-muted);
+  --color-rose-muted: var(--rose-muted);
+  --color-terracotta-muted: var(--terracotta-muted);
+  --color-teal-muted: var(--teal-muted);
+  --color-gold-muted: var(--gold-muted);
+  --color-indigo-muted: var(--indigo-muted);
+  --color-neutral-muted: var(--neutral-muted);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-fraunces);
 }
 
-html,
-body {
-  height: 100%;
-}
-
-::selection {
-  background: color-mix(in srgb, var(--accent) 30%, white);
-}
-
-a:focus-visible,
-button:focus-visible {
-  outline: 2px solid var(--ring);
-  outline-offset: 3px;
-  border-radius: 14px;
-}
-
-@keyframes floaty {
-  0% {
-    transform: translate3d(0, 0, 0);
+@layer base {
+  html {
+    height: 100%;
+    scroll-behavior: smooth;
   }
-  50% {
-    transform: translate3d(0, -10px, 0);
+
+  body {
+    height: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
   }
-  100% {
-    transform: translate3d(0, 0, 0);
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: var(--plum-tint);
+    color: var(--ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 3px;
+    border-radius: 6px;
   }
 }
 
-@keyframes fadeUp {
-  0% {
+@layer components {
+  /* Mono metadata: dates, eyebrows, section numbers, filter tabs. */
+  .label {
+    font-family: var(--font-mono), ui-monospace, monospace;
+    font-size: 0.6875rem;
+    line-height: 1;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .display {
+    font-family: var(--font-display), Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.022em;
+  }
+
+  /* Pill buttons.
+     The 0.14em tracking on .label adds a trailing space after the *final*
+     glyph. In an auto-width pill that dead space lands inside the right
+     padding, so the label sits visibly left of centre. Trimming the same
+     amount off padding-right puts the glyph run back in the middle.
+     (text-indent does not work here — it just widens the pill.) */
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.75rem;
+    border-radius: 9999px;
+    padding-left: 1.5rem;
+    padding-right: calc(1.5rem - 0.14em);
+  }
+
+  .pill-sm {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.25rem;
+    border-radius: 9999px;
+    padding-left: 1rem;
+    padding-right: calc(1rem - 0.14em);
+  }
+}
+
+/* Fine film grain. Self-contained SVG turbulence — no network request. */
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Scroll-reveal starts at opacity 0 and is driven by IntersectionObserver. With
+   scripting unavailable the observer never fires, so force the revealed state —
+   otherwise the entire page renders blank. */
+@media (scripting: none) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+@keyframes rise {
+  from {
     opacity: 0;
-    transform: translate3d(0, 12px, 0);
+    transform: translate3d(0, 14px, 0);
   }
-  100% {
+  to {
     opacity: 1;
-    transform: translate3d(0, 0, 0);
+    transform: none;
   }
 }
 
-@keyframes shimmer {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.anim-float {
-  animation: floaty 8s ease-in-out infinite;
-}
-
-.anim-float-slow {
-  animation: floaty 12s ease-in-out infinite;
-}
-
-.anim-fade-up {
-  animation: fadeUp 700ms cubic-bezier(0.21, 0.84, 0.32, 1) both;
-}
-
-.anim-shimmer {
-  background-size: 200% 200%;
-  animation: shimmer 10s ease infinite;
+.anim-rise {
+  animation: rise 800ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .anim-float,
-  .anim-float-slow,
-  .anim-fade-up,
-  .anim-shimmer {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .anim-rise {
     animation: none !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }

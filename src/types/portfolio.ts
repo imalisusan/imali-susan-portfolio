@@ -18,6 +18,11 @@ export type Project = {
   tech: string[];
 };
 
+/** A project or website build, tagged so the Work section can filter it. */
+export type WorkItem = Project & {
+  kind: "product" | "website";
+};
+
 export type Education = {
   school: string;
   qualification: string;

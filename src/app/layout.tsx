@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Fraunces, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -12,10 +12,24 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// Display face. Left at Fraunces' default SOFT/WONK/opsz axes, which is its
+// most restrained cut — the characterful settings read as decorative here.
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
   title: "Imali Susan | Software Engineer",
   description:
-    "Full-stack software engineer focused on building software-supported products with real impact.",
+    "Full-stack engineer in Kenya. Laravel and PHP across utility billing, point-of-sale, insurance and donor management — backend services, REST APIs, and the dashboards teams work in.",
+  openGraph: {
+    title: "Imali Susan | Software Engineer",
+    description:
+      "Full-stack engineer in Kenya building backend services, REST APIs and internal tools.",
+    type: "profile",
+    locale: "en_GB",
+  },
 };
 
 export default function RootLayout({
@@ -26,9 +40,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      data-scroll-behavior="smooth"
+      className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} h-full`}
     >
-      <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
+      <body className="grain flex min-h-full flex-col bg-paper font-sans text-ink antialiased">
         {children}
       </body>
     </html>

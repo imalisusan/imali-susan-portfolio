@@ -1,68 +1,73 @@
-import { socials } from "@/data/socials";
-import { Chip } from "@/components/ui/Chip";
-import { Card } from "@/components/ui/Card";
+const facts = [
+  { label: "Most recently", value: "Compassion International" },
+  { label: "Core stack", value: "Laravel · PHP · React" },
+  { label: "Based in", value: "Kenya" },
+];
 
 export function Hero() {
   return (
-    <div className="relative overflow-hidden bg-[radial-gradient(80%_60%_at_50%_0%,var(--color-accent-soft),transparent)]">
-      <div className="pointer-events-none absolute -top-28 left-1/2 h-[560px] w-[560px] -translate-x-1/2 rounded-full bg-gradient-to-br from-[#efe2ff] via-[#f8dcff] to-[#e2ddff] opacity-80 blur-3xl anim-float motion-reduce:animate-none" />
-      <div className="pointer-events-none absolute -bottom-44 -right-28 h-[560px] w-[560px] rounded-full bg-gradient-to-br from-[#f3e0ff] via-[#ead7ff] to-[#d9d6ff] opacity-70 blur-3xl anim-float-slow motion-reduce:animate-none" />
+    <div className="relative overflow-hidden border-b border-rule">
+      {/* Three soft washes from the accent family rather than one flat bloom —
+          enough colour movement to feel warm, all well below text contrast. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-48 left-[-12%] h-[40rem] w-[40rem] rounded-full bg-plum-tint opacity-70 blur-3xl"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-32 left-[22%] h-[32rem] w-[32rem] rounded-full bg-rose-tint opacity-60 blur-3xl"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-56 right-[-8%] h-[36rem] w-[36rem] rounded-full bg-gold-tint opacity-50 blur-3xl"
+      />
 
-      <div className="mx-auto w-full max-w-5xl px-6 py-14 sm:py-20">
-        <Card className="relative bg-surface/90 p-8 shadow-[0_1px_0_0_var(--color-border)] backdrop-blur sm:p-10 anim-fade-up motion-reduce:animate-none">
-          <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[color:var(--color-accent)] to-transparent opacity-70" />
-
-          <p className="text-sm font-medium text-foreground/70">
-            Full-stack Software Engineer
+      <div className="relative mx-auto w-full max-w-5xl px-6 pb-16 pt-20 sm:pb-24 sm:pt-28">
+        <div className="anim-rise">
+          <p className="label flex items-center gap-2.5 text-ink-3">
+            <span
+              aria-hidden="true"
+              className="inline-block h-1.5 w-1.5 rounded-full bg-rose"
+            />
+            Full-stack Engineer · Kenya
           </p>
-          <h1 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
-            Building software-supported products with real impact.
+
+          <h1 className="display mt-7 max-w-3xl text-[clamp(2.5rem,7vw,4.5rem)] leading-[0.98]">
+            I build the systems behind billing, payments, and operations.
           </h1>
-          <p className="mt-5 max-w-2xl text-base leading-7 text-foreground/80 sm:text-lg">
-            Career objective: To exhibit excellence in matters of
-            software-supported product development so that they may have an
-            impact on people.
+
+          <p className="mt-8 max-w-xl text-base leading-8 text-ink-2">
+            Laravel and PHP across utility billing, point-of-sale, insurance and
+            donor management — backend services, REST APIs, and the dashboards
+            teams actually work in. Shipped with Pest and PHPUnit.
           </p>
 
-          <div className="mt-6 flex flex-wrap gap-2">
-            <Chip>Laravel</Chip>
-            <Chip>PHP</Chip>
-            <Chip>React</Chip>
-            <Chip>Next.js</Chip>
-            <Chip>Node.js</Chip>
-            <Chip>REST APIs</Chip>
-            <Chip>Testing (Pest / PHPUnit)</Chip>
+          <div className="mt-10 flex flex-wrap items-center gap-3">
+            <a
+              href="#work"
+              className="label pill bg-plum text-white transition-colors duration-200 hover:bg-rose"
+            >
+              See the work
+            </a>
+            <a
+              href="#contact"
+              className="label pill border border-plum-line bg-surface text-plum transition-colors duration-200 hover:border-plum hover:bg-plum-tint"
+            >
+              Get in touch
+            </a>
           </div>
+        </div>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-            {socials.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target={link.href.startsWith("http") ? "_blank" : undefined}
-                rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="inline-flex h-11 items-center justify-center rounded-full border border-border bg-background px-5 text-sm font-medium text-foreground/90 transition-colors duration-200 hover:bg-muted hover:shadow-sm"
-              >
-                {link.label}
-              </a>
-            ))}
-          </div>
-
-          <div className="mt-8 grid gap-3 text-sm text-foreground/80 sm:grid-cols-3">
-            <div className="rounded-2xl border border-border bg-muted px-5 py-4">
-              <div className="font-medium text-foreground">Phone</div>
-              <div className="mt-1">+254 724 920 456</div>
+        <dl className="mt-16 grid gap-8 border-t border-rule pt-8 sm:grid-cols-3">
+          {facts.map((fact) => (
+            <div key={fact.label}>
+              <dt className="label text-ink-3">{fact.label}</dt>
+              <dd className="mt-2.5 text-[0.9375rem] leading-6 text-ink">
+                {fact.value}
+              </dd>
             </div>
-            <div className="rounded-2xl border border-border bg-muted px-5 py-4">
-              <div className="font-medium text-foreground">Email</div>
-              <div className="mt-1 break-all">susanimali52@gmail.com</div>
-            </div>
-            <div className="rounded-2xl border border-border bg-muted px-5 py-4">
-              <div className="font-medium text-foreground">Location</div>
-              <div className="mt-1">Kenya</div>
-            </div>
-          </div>
-        </Card>
+          ))}
+        </dl>
       </div>
     </div>
   );

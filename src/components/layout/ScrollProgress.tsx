@@ -10,10 +10,8 @@ export function ScrollProgress() {
 
     const update = () => {
       const el = document.documentElement;
-      const scrollTop = el.scrollTop;
       const height = el.scrollHeight - el.clientHeight;
-      const next = height > 0 ? scrollTop / height : 0;
-      setProgress(next);
+      setProgress(height > 0 ? el.scrollTop / height : 0);
     };
 
     const onScroll = () => {
@@ -32,9 +30,12 @@ export function ScrollProgress() {
   }, []);
 
   return (
-    <div className="h-1 w-full bg-border/60">
+    <div
+      aria-hidden="true"
+      className="pointer-events-none absolute inset-x-0 bottom-[-1px] h-px"
+    >
       <div
-        className="h-full origin-left bg-gradient-to-r from-[#b57edc] via-[#c084fc] to-[#b57edc] anim-shimmer"
+        className="h-full origin-left bg-gradient-to-r from-plum via-rose to-gold"
         style={{ transform: `scaleX(${progress})` }}
       />
     </div>
