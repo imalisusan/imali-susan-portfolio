@@ -26,10 +26,7 @@ export function Hero() {
           className="anim-rise mt-6 max-w-xl text-base leading-8 text-ink-2"
           style={{ animationDelay: "90ms" }}
         >
-          I’m a full-stack developer in Kenya. I work mostly in Laravel and PHP,
-          building backends and internal tools — billing systems for water
-          utilities, a point-of-sale platform, insurance portals, and donor
-          systems at Compassion International.
+         I’m a Full-Stack Software Developer based in Kenya, passionate about building technology that solves real problems and creates meaningful impact. I primarily work with PHP, Laravel, React, and modern web technologies, building everything from backend systems and RESTful APIs to customer portals, dashboards, payment integrations, and internal tools.
         </p>
 
         <div
