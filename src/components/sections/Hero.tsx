@@ -13,7 +13,7 @@ export function Hero() {
         className="pointer-events-none absolute -top-48 left-[-12%] h-[38rem] w-[38rem] rounded-full bg-plum-tint opacity-60 blur-3xl"
       />
 
-      <div className="relative mx-auto grid w-full max-w-5xl items-center gap-12 px-6 pb-16 pt-20 sm:pb-24 sm:pt-24 lg:grid-cols-[1fr_20rem] lg:gap-16">
+      <div className="relative mx-auto grid w-full max-w-6xl items-center gap-12 px-6 pb-16 pt-20 sm:pb-24 sm:pt-24 lg:grid-cols-[1fr_22rem] lg:gap-12">
         {/* Left — Introduction */}
         <div>
           <h1 className="display anim-rise max-w-3xl text-[clamp(2rem,4.5vw,3rem)] leading-[1.05]">
@@ -71,7 +71,7 @@ export function Hero() {
 
         {/* Right — Profile image */}
         <div
-          className="anim-rise mx-auto w-full max-w-[20rem] lg:mx-0"
+          className="anim-rise ml-auto w-full max-w-[22rem] lg:translate-x-4"
           style={{ animationDelay: "140ms" }}
         >
           <div className="relative overflow-hidden rounded-[2rem] border border-rule bg-plum-tint p-2">
