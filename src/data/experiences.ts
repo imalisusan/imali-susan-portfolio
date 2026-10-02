@@ -1,6 +1,21 @@
 import type { Experience } from "@/types/portfolio";
 
 export const experiences: Experience[] = [
+    {
+    company: "Daystar University",
+    role: "Web Developer",
+    dates: "2026",
+    highlights: [
+      "Contributed to the redesign and redevelopment of Daystar University's website, creating a more modern and consistent digital experience.",
+      "Redesigned and developed websites for the university's schools and directorates, adapting shared layouts and components to the needs of different departments.",
+      "Implemented responsive layouts, navigation, content sections, and interactive features across multiple institutional websites.",
+    ],
+    tech: [
+      "Laravel",
+      "Blade",
+      "CSS",
+    ],
+  },
   {
     company: "Compassion International",
     role: "Software Engineering Contractor",
