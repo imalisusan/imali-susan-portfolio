@@ -10,7 +10,7 @@ export function ExperienceSection() {
       index="02"
       tone="teal"
       title="Experience"
-      lede="Eight roles across contracting, product teams and internships — mostly backend, mostly Laravel, consistently test-driven."
+      lede="Eight roles across contracting, product teams and internships; mostly backend, mostly Laravel, consistently test-driven."
     >
       <div className="grid gap-px">
         {experiences.map((exp, index) => (
