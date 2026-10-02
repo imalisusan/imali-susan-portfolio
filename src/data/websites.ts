@@ -1,6 +1,13 @@
 import type { Project } from "@/types/portfolio";
 
 export const websites: Project[] = [
+    {
+    name: "Daystar University Websites",
+    description:
+      "Contributed to the redesign and redevelopment of Daystar University's website ecosystem, including websites for the university's schools and directorates, with a focus on modern layouts, responsive design, consistent navigation, and improved content presentation.",
+    href: "https://www.daystar.ac.ke/",
+    tech: ["Laravel", "Blade", "CSS", "JavaScript"],
+  },
   {
     name: "Neuroguard Neuromonitoring Solutions",
     description:
