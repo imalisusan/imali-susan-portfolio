@@ -42,7 +42,7 @@ export const experiences: Experience[] = [
   {
     company: "Wonderkid Media",
     role: "FullStack Laravel Developer Contractor",
-    dates: "November 2024 — June 2026",
+    dates: "November 2024 — October 2026",
     highlights: [
       "Developed and maintained a utility management platform for water and sewerage service providers, building backend systems, dashboards, reporting tools, and RESTful APIs to support customer management, billing, and operational workflows.",
       "Rebuilt a customer portal from Nuxt.js to Laravel Livewire and implemented location-based features using the Google Maps API.",
