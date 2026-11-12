@@ -7,48 +7,46 @@ export function ExperienceSection() {
   return (
     <Section
       id="experience"
-      index="02"
-      tone="teal"
-      title="Experience"
-      lede="Eight roles across contracting, product teams and internships; mostly backend, mostly Laravel, consistently test-driven."
+      theme="dark"
+      eyebrow="My experience"
+      title="My work experience"
+      highlight="experience"
+      lede="Nine roles across contracting, product teams and internships; mostly backend, mostly Laravel, consistently test-driven."
     >
-      <div className="grid gap-px">
+      <div className="border-t border-night-rule">
         {experiences.map((exp, index) => (
           <Reveal
             key={`${exp.company}-${exp.role}-${exp.dates}`}
             delayMs={Math.min(index, 4) * 60}
           >
-            <article className="group grid gap-x-10 gap-y-3 py-8 sm:grid-cols-[12rem_1fr]">
-              <div className="label pt-1 leading-4 text-balance text-ink-3">
-                {exp.dates}
-              </div>
-
-              <div className="relative border-l border-rule pl-7 sm:pl-8">
-                <span
-                  aria-hidden="true"
-                  className="absolute -left-[3px] top-2 h-1.5 w-1.5 rounded-full bg-rule-2 transition-colors duration-300 group-hover:bg-teal"
-                />
-
-                <h3 className="text-[1.0625rem] font-semibold tracking-tight text-ink">
-                  {exp.role}
-                </h3>
-                <p className="mt-1 text-[0.9375rem] text-teal">
+            <article className="group grid gap-x-12 gap-y-4 border-b border-night-rule py-10 lg:grid-cols-[18rem_minmax(0,1fr)]">
+              <div>
+                <p className="font-display text-sm font-semibold text-brand-soft">
+                  {exp.dates}
+                </p>
+                <p className="display mt-3 text-xl text-on-night">
                   {exp.company}
                 </p>
+              </div>
 
-                <ul className="mt-4 grid gap-2.5">
+              <div>
+                <h3 className="display text-2xl leading-snug text-on-night transition-colors duration-300 group-hover:text-brand-soft">
+                  {exp.role}
+                </h3>
+
+                <ul className="mt-5 grid gap-3">
                   {exp.highlights.map((item) => (
                     <li
                       key={item}
-                      className="relative pl-5 text-[0.9375rem] leading-7 text-ink-2 before:absolute before:left-0 before:top-[0.85em] before:h-px before:w-2.5 before:bg-rule-2"
+                      className="relative pl-6 text-[0.9375rem] leading-7 text-on-night-2 before:absolute before:left-0 before:top-[0.7em] before:h-1.5 before:w-1.5 before:rounded-full before:bg-brand-soft"
                     >
                       {item}
                     </li>
                   ))}
                 </ul>
 
-                <div className="mt-5">
-                  <TechList items={exp.tech} />
+                <div className="mt-6">
+                  <TechList items={exp.tech} dark />
                 </div>
               </div>
             </article>

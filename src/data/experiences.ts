@@ -1,7 +1,28 @@
 import type { Experience } from "@/types/portfolio";
 
 export const experiences: Experience[] = [
-    {
+  {
+    company: "Wonderkid Media",
+    role: "FullStack Laravel Developer Contractor",
+    dates: "November 2024 — Present",
+    highlights: [
+      "Developed and maintained a utility management platform for water and sewerage service providers, building backend systems, dashboards, reporting tools, and RESTful APIs to support customer management, billing, and operational workflows.",
+      "Rebuilt a customer portal from Nuxt.js to Laravel Livewire and implemented location-based features using the Google Maps API.",
+      "Worked with Laravel, Livewire, Filament, PostgreSQL, Vue.js, Nuxt.js, Tailwind CSS, and Pest PHP to deliver scalable and reliable solutions.",
+    ],
+    tech: [
+      "Laravel",
+      "Livewire",
+      "Filament",
+      "PostgreSQL",
+      "Vue.js",
+      "Nuxt.js",
+      "Tailwind CSS",
+      "Google Maps API",
+      "Pest PHP",
+    ],
+  },
+  {
     company: "Daystar University",
     role: "Web Developer",
     dates: "August 2026 — December 2026",
@@ -39,27 +60,6 @@ export const experiences: Experience[] = [
       "Adminer",
       "GitLab",
       "OpenAI APIs",
-    ],
-  },
-  {
-    company: "Wonderkid Media",
-    role: "FullStack Laravel Developer Contractor",
-    dates: "November 2024 — October 2026",
-    highlights: [
-      "Developed and maintained a utility management platform for water and sewerage service providers, building backend systems, dashboards, reporting tools, and RESTful APIs to support customer management, billing, and operational workflows.",
-      "Rebuilt a customer portal from Nuxt.js to Laravel Livewire and implemented location-based features using the Google Maps API.",
-      "Worked with Laravel, Livewire, Filament, PostgreSQL, Vue.js, Nuxt.js, Tailwind CSS, and Pest PHP to deliver scalable and reliable solutions.",
-    ],
-    tech: [
-      "Laravel",
-      "Livewire",
-      "Filament",
-      "PostgreSQL",
-      "Vue.js",
-      "Nuxt.js",
-      "Tailwind CSS",
-      "Google Maps API",
-      "Pest PHP",
     ],
   },
   {

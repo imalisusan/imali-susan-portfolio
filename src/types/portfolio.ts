@@ -1,3 +1,5 @@
+import type { StaticImageData } from "next/image";
+
 export type SocialLink = {
   label: string;
   href: string;
@@ -27,4 +29,6 @@ export type Education = {
   school: string;
   qualification: string;
   dates: string;
+  /** School crest or wordmark, imported as a static image. */
+  logo?: StaticImageData;
 };

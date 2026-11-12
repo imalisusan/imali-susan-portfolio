@@ -1,21 +1,16 @@
 import type { Metadata } from "next";
-import { Fraunces, Geist, Geist_Mono } from "next/font/google";
+import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// Body copy, as in the template.
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-// Display face. Left at Fraunces' default SOFT/WONK/opsz axes, which is its
-// most restrained cut — the characterful settings read as decorative here.
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+// Headings, buttons and labels.
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
 });
 
@@ -41,9 +36,9 @@ export default function RootLayout({
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} h-full`}
+      className={`${inter.variable} ${manrope.variable} h-full`}
     >
-      <body className="grain flex min-h-full flex-col bg-paper font-sans text-ink antialiased">
+      <body className="flex min-h-full flex-col bg-paper font-sans text-ink antialiased">
         {children}
       </body>
     </html>

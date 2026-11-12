@@ -36,7 +36,7 @@ export function MobileNav({ links }: { links: readonly NavLink[] }) {
         aria-expanded={open}
         aria-controls={panelId}
         aria-label={open ? "Close menu" : "Open menu"}
-        className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-rule bg-surface text-ink-2 transition-colors duration-200 hover:border-plum-line hover:text-plum sm:hidden"
+        className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-rule bg-surface text-ink-2 transition-colors duration-200 hover:border-brand-line hover:text-brand-ink md:hidden"
       >
         <svg
           viewBox="0 0 24 24"
@@ -66,7 +66,7 @@ export function MobileNav({ links }: { links: readonly NavLink[] }) {
           <div
             aria-hidden="true"
             onClick={close}
-            className="fixed inset-0 z-40 bg-ink/10 sm:hidden"
+            className="fixed inset-0 z-40 bg-ink/10 md:hidden"
           />,
           document.body,
         )}
@@ -80,25 +80,30 @@ export function MobileNav({ links }: { links: readonly NavLink[] }) {
         inert={!open}
         className={[
           "absolute inset-x-0 top-full z-50 origin-top border-b border-rule bg-paper shadow-[var(--shadow-card)]",
-          "transition-[opacity,translate] duration-250 ease-[cubic-bezier(0.16,1,0.3,1)] sm:hidden",
+          "transition-[opacity,translate] duration-250 ease-[cubic-bezier(0.16,1,0.3,1)] md:hidden",
           open
             ? "translate-y-0 opacity-100"
             : "pointer-events-none -translate-y-2 opacity-0",
         ].join(" ")}
       >
-        <nav className="mx-auto w-full max-w-5xl px-6 py-2">
+        <nav className="mx-auto w-full max-w-6xl px-4 py-2 sm:px-6">
           <ul className="flex flex-col">
             {links.map((link) => (
               <li key={link.href} className="border-b border-rule last:border-0">
                 <a
                   href={link.href}
                   onClick={close}
-                  className="label flex min-h-12 items-center text-ink-2 transition-colors duration-200 hover:text-plum"
+                  className="font-display flex min-h-12 items-center text-base font-semibold text-ink transition-colors duration-200 hover:text-brand-ink"
                 >
                   {link.label}
                 </a>
               </li>
             ))}
+            <li className="py-3">
+              <a href="#contact" onClick={close} className="btn btn-dark btn-sm w-full">
+                Hire me
+              </a>
+            </li>
           </ul>
         </nav>
       </div>

@@ -1,85 +1,74 @@
 @import "tailwindcss";
 
+/*
+ * Visual language borrowed from the Xiomi portfolio template: Manrope
+ * headings over Inter body copy, a single accent (violet here, in place of
+ * the template's mint), near-black bands that
+ * alternate with white and off-white sections, pill buttons with an arrow,
+ * and a soft pastel wash behind the hero.
+ */
 :root {
   color-scheme: light;
 
-  /* Surfaces — soft warm white with a blush cast */
-  --paper: #fffcfa;
+  /*
+   * One bold violet does all the accent work. Neutrals and the dark bands
+   * carry a faint violet tint so they belong to the same family instead of
+   * sitting beside it as plain grey.
+   *
+   * Contrast (WCAG): brand on white 5.7:1, white on brand 5.7:1, brand-ink
+   * on white 7.1:1, brand-soft on night 8.1:1. Plain brand on night is only
+   * 3.2:1, so anything on the dark bands uses brand-soft.
+   */
+
+  /* Surfaces */
+  --paper: #ffffff;
   --surface: #ffffff;
-  --surface-2: #fbf4f1;
+  --surface-2: #f8f6fb;
 
-  /* Text. Ink is a deep warm plum rather than near-black, which keeps the
-     page from feeling heavy while still reading at 14.6:1. */
-  --ink: #2e2430;
-  --ink-2: #5f5461;
-  --ink-3: #756978;
+  /* Dark bands — violet-black rather than neutral charcoal */
+  --night: #16121d;
+  --night-2: #211b2b;
+  --night-rule: rgba(255, 255, 255, 0.1);
+  --on-night: #ffffff;
+  --on-night-2: #b9b3c4;
 
-  --rule: #f0e6e4;
-  --rule-2: #e0d2d0;
+  /* Text */
+  --ink: #1b1622;
+  --ink-2: #5c5566;
+  --ink-3: #6f6879;
 
-  /* Six-hue accent family plus a neutral. Every tint sits within 0.03
-     luminance of the others and every text colour within 0.05, so a row of
-     mixed tags reads as one palette instead of confetti. */
-  --plum: #834673;
-  --plum-tint: #f5ecf3;
-  --plum-line: #e7d5e3;
+  --rule: #eeebf2;
+  --rule-2: #ddd8e4;
 
-  --rose: #a83a5b;
-  --rose-tint: #fcebf0;
-  --rose-line: #f3d5df;
+  /* Brand violet */
+  --brand: #7c3aed; /* fills with white text, marks, text on light */
+  --brand-hover: #6d28d9;
+  --brand-ink: #6d28d9; /* headline highlights and small text on light */
+  --brand-soft: #b69cff; /* accent on the dark bands */
+  --brand-tint: #f3eeff;
+  --brand-line: #e2d6ff;
 
-  --terracotta: #a54d28;
-  --terracotta-tint: #fbede6;
-  --terracotta-line: #f2dacd;
+  /* Tags: one quiet pill for every technology. */
+  --tag-bg: #f7f5fa;
+  --tag-line: #ebe7f0;
+  --tag-ink: #5c5566;
 
-  --teal: #2a6e67;
-  --teal-tint: #e7f3f1;
-  --teal-line: #cfe5e1;
+  --ring: rgba(124, 58, 237, 0.55);
 
-  --gold: #8a6320;
-  --gold-tint: #f9f0df;
-  --gold-line: #efe0c4;
-
-  --indigo: #454fa0;
-  --indigo-tint: #edeff9;
-  --indigo-line: #dadef0;
-
-  --neutral: #6b6169;
-  --neutral-tint: #f5f1ef;
-  --neutral-line: #e8dfdc;
-
-  /* Tag pills. Every tag shares one neutral pill; the category hue survives
-     only as a low-chroma tint in the text — roughly 60% less colourful than
-     the full-strength hues above, so a dense row of tags reads as a quiet
-     line rather than a stripe of colour. */
-  --tag-bg: #faf6f4;
-  --tag-line: #efe7e4;
-
-  --plum-muted: #63495d;
-  --rose-muted: #6e4a55;
-  --terracotta-muted: #6b5241;
-  --teal-muted: #3d5a56;
-  --gold-muted: #5f5236;
-  --indigo-muted: #4a4e66;
-  --neutral-muted: #5f5461;
-
-  /* Plum is the primary brand accent. */
-  --accent: var(--plum);
-  --accent-tint: var(--plum-tint);
-  --accent-line: var(--plum-line);
-
-  --ring: rgba(131, 70, 115, 0.5);
-
-  --shadow-card: 0 1px 2px rgba(46, 36, 48, 0.04),
-    0 8px 24px -16px rgba(46, 36, 48, 0.14);
-  --shadow-lift: 0 2px 4px rgba(46, 36, 48, 0.05),
-    0 18px 40px -24px rgba(46, 36, 48, 0.22);
+  --shadow-card: 0px 4px 25px 0px rgba(27, 22, 34, 0.06);
+  --shadow-lift: 0px 14px 40px -12px rgba(46, 16, 101, 0.22);
 }
 
 @theme inline {
   --color-paper: var(--paper);
   --color-surface: var(--surface);
   --color-surface-2: var(--surface-2);
+
+  --color-night: var(--night);
+  --color-night-2: var(--night-2);
+  --color-night-rule: var(--night-rule);
+  --color-on-night: var(--on-night);
+  --color-on-night-2: var(--on-night-2);
 
   --color-ink: var(--ink);
   --color-ink-2: var(--ink-2);
@@ -88,52 +77,20 @@
   --color-rule: var(--rule);
   --color-rule-2: var(--rule-2);
 
-  --color-plum: var(--plum);
-  --color-plum-tint: var(--plum-tint);
-  --color-plum-line: var(--plum-line);
-
-  --color-rose: var(--rose);
-  --color-rose-tint: var(--rose-tint);
-  --color-rose-line: var(--rose-line);
-
-  --color-terracotta: var(--terracotta);
-  --color-terracotta-tint: var(--terracotta-tint);
-  --color-terracotta-line: var(--terracotta-line);
-
-  --color-teal: var(--teal);
-  --color-teal-tint: var(--teal-tint);
-  --color-teal-line: var(--teal-line);
-
-  --color-gold: var(--gold);
-  --color-gold-tint: var(--gold-tint);
-  --color-gold-line: var(--gold-line);
-
-  --color-indigo: var(--indigo);
-  --color-indigo-tint: var(--indigo-tint);
-  --color-indigo-line: var(--indigo-line);
-
-  --color-neutral: var(--neutral);
-  --color-neutral-tint: var(--neutral-tint);
-  --color-neutral-line: var(--neutral-line);
-
-  --color-accent: var(--accent);
-  --color-accent-tint: var(--accent-tint);
-  --color-accent-line: var(--accent-line);
+  --color-brand: var(--brand);
+  --color-brand-hover: var(--brand-hover);
+  --color-brand-ink: var(--brand-ink);
+  --color-brand-soft: var(--brand-soft);
+  --color-brand-tint: var(--brand-tint);
+  --color-brand-line: var(--brand-line);
 
   --color-tag-bg: var(--tag-bg);
   --color-tag-line: var(--tag-line);
 
-  --color-plum-muted: var(--plum-muted);
-  --color-rose-muted: var(--rose-muted);
-  --color-terracotta-muted: var(--terracotta-muted);
-  --color-teal-muted: var(--teal-muted);
-  --color-gold-muted: var(--gold-muted);
-  --color-indigo-muted: var(--indigo-muted);
-  --color-neutral-muted: var(--neutral-muted);
+  --color-tag-ink: var(--tag-ink);
 
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-manrope);
 }
 
 @layer base {
@@ -159,8 +116,8 @@
   }
 
   ::selection {
-    background: var(--plum-tint);
-    color: var(--ink);
+    background: var(--brand);
+    color: #fff;
   }
 
   :focus-visible {
@@ -171,73 +128,117 @@
 }
 
 @layer components {
-  /* Mono metadata: dates, eyebrows, section numbers, filter tabs. */
+  /* Small caps metadata: dates, tags, filter counts. */
   .label {
-    font-family: var(--font-mono), ui-monospace, monospace;
-    font-size: 0.6875rem;
+    font-family: var(--font-display), ui-sans-serif, sans-serif;
+    font-size: 0.75rem;
     line-height: 1;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 600;
   }
 
   .display {
-    font-family: var(--font-display), Georgia, serif;
-    font-weight: 500;
-    letter-spacing: -0.022em;
+    font-family: var(--font-display), ui-sans-serif, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.025em;
   }
 
-  /* Pill buttons.
-     The 0.14em tracking on .label adds a trailing space after the *final*
-     glyph. In an auto-width pill that dead space lands inside the right
-     padding, so the label sits visibly left of centre. Trimming the same
-     amount off padding-right puts the glyph run back in the middle.
-     (text-indent does not work here — it just widens the pill.) */
-  .pill {
+  /* The template's "✦ About Me" eyebrow above every section heading. */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-display), ui-sans-serif, sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1;
+  }
+
+  /* Pill button with a fill that sweeps in from the left on hover, as in
+     the template. Colours come from --btn-* so variants only swap tokens. */
+  .btn {
+    --btn-bg: var(--brand);
+    --btn-fg: #fff;
+    --btn-sweep: var(--ink);
+    --btn-sweep-fg: #fff;
+    --btn-border: transparent;
+
+    position: relative;
+    z-index: 0;
+    isolation: isolate;
+    overflow: hidden;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 0.6rem;
+    height: 3.25rem;
+    padding: 0 1.75rem;
+    border-radius: 9999px;
+    border: 1.5px solid var(--btn-border);
+    background: var(--btn-bg);
+    color: var(--btn-fg);
+    font-family: var(--font-display), ui-sans-serif, sans-serif;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    line-height: 1;
+    white-space: nowrap;
+    transition: color 300ms ease-in-out, border-color 300ms ease-in-out;
+  }
+
+  .btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    width: 0;
+    background: var(--btn-sweep);
+    transition: width 300ms ease-in-out;
+  }
+
+  .btn:hover {
+    color: var(--btn-sweep-fg);
+    border-color: var(--btn-sweep);
+  }
+
+  .btn:hover::before {
+    width: 100%;
+  }
+
+  .btn svg {
+    transition: transform 300ms ease-in-out;
+  }
+
+  .btn:hover svg {
+    transform: rotate(45deg);
+  }
+
+  .btn-dark {
+    --btn-bg: var(--ink);
+    --btn-fg: #fff;
+    --btn-sweep: var(--brand);
+    --btn-sweep-fg: #fff;
+  }
+
+  .btn-ghost {
+    --btn-bg: transparent;
+    --btn-fg: var(--ink);
+    --btn-border: var(--rule-2);
+  }
+
+  .btn-ghost-night {
+    --btn-bg: transparent;
+    --btn-fg: #fff;
+    --btn-border: rgba(255, 255, 255, 0.25);
+    --btn-sweep: var(--brand-soft);
+    --btn-sweep-fg: var(--ink);
+  }
+
+  .btn-sm {
     height: 2.75rem;
-    border-radius: 9999px;
-    padding-left: 1.5rem;
-    padding-right: calc(1.5rem - 0.14em);
+    padding: 0 1.25rem;
+    font-size: 0.875rem;
   }
-
-  .pill-sm {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    height: 2.25rem;
-    border-radius: 9999px;
-    padding-left: 1rem;
-    padding-right: calc(1rem - 0.14em);
-  }
-
-  /* Declared here rather than as utilities on each button so the transform
-     transition is not clobbered by a `transition-colors` utility, which would
-     win the cascade from @layer utilities. */
-  .pill,
-  .pill-sm {
-    transition-property: background-color, border-color, color, transform;
-    transition-duration: 200ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .pill:hover,
-  .pill-sm:hover {
-    transform: translateY(-1px);
-  }
-}
-
-/* Fine film grain. Self-contained SVG turbulence — no network request. */
-.grain::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  opacity: 0.03;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 /* Scroll-reveal starts at opacity 0 and is driven by IntersectionObserver. With
@@ -265,8 +266,7 @@
   animation: rise 800ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-/* The greeting's waving hand. Runs a few times and then rests — an infinite
-   wave turns into a distraction sitting at the top of every scroll. */
+/* The greeting's waving hand. Runs a few times and then rests. */
 @keyframes wave {
   0%,
   55%,
@@ -294,23 +294,34 @@
   animation: wave 2.6s ease-in-out 900ms 3;
 }
 
-/* Section hairlines draw left-to-right as each section scrolls into view.
-   Driven by the data-revealed flag that Reveal sets. */
-.rule-draw {
-  transform: scaleX(0);
-  transform-origin: left center;
-  transition: transform 900ms cubic-bezier(0.16, 1, 0.3, 1) 150ms;
-}
-
-[data-revealed="true"] .rule-draw {
-  transform: scaleX(1);
-}
-
-/* Without scripting Reveal never flips the flag, so show the rules outright. */
-@media (scripting: none) {
-  .rule-draw {
-    transform: none !important;
+/* Skills marquee on the dark band. The track holds two identical copies so
+   translating by -50% loops seamlessly. */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
   }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.anim-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+/* Gentle drift for the floating cards beside photos. */
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.anim-bob {
+  animation: bob 5s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -319,13 +330,10 @@
   }
 
   .anim-rise,
-  .anim-wave {
+  .anim-wave,
+  .anim-marquee,
+  .anim-bob {
     animation: none !important;
-  }
-
-  .pill:hover,
-  .pill-sm:hover {
-    transform: none;
   }
 
   *,

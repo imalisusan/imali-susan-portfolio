@@ -1,4 +1,5 @@
 import { Card } from "@/components/ui/Card";
+import { ArrowUpRight } from "@/components/ui/Icons";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
 
@@ -71,9 +72,10 @@ export function SocialFollowSection() {
   return (
     <Section
       id="follow"
-      index="06"
-      tone="terracotta"
+      theme="muted"
+      eyebrow="Follow along"
       title="Beyond the resume"
+      highlight="resume"
       lede="Two channels, two different sides of the same person."
     >
       <div className="grid gap-4 sm:grid-cols-2">
@@ -85,22 +87,26 @@ export function SocialFollowSection() {
               rel="noopener noreferrer"
               className="group block h-full"
             >
-              <Card interactive className="flex h-full flex-col p-6">
+              <Card interactive className="flex h-full flex-col rounded-3xl p-7 sm:p-8">
                 <div className="flex items-center gap-4">
                   <span
-                    className={`inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-white ring-1 ring-black/10 ${tile}`}
+                    className={`inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl text-white ring-1 ring-black/10 ${tile}`}
                   >
                     <Icon className="h-[1.15rem] w-[1.15rem]" />
                   </span>
-                  <div className="min-w-0">
-                    <h3 className="text-[1.0625rem] font-semibold tracking-tight text-ink">
-                      {name}
-                    </h3>
-                    <p className="label mt-1 truncate text-ink-3">{handle}</p>
+                  <div className="min-w-0 flex-1">
+                    <h3 className="display text-xl text-ink">{name}</h3>
+                    <p className="mt-1 truncate text-sm text-ink-3">{handle}</p>
                   </div>
+                  <span
+                    aria-hidden="true"
+                    className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-brand text-brand-ink transition-colors duration-300 group-hover:bg-brand group-hover:text-white"
+                  >
+                    <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:rotate-45" />
+                  </span>
                 </div>
 
-                <p className="mt-5 text-[0.9375rem] leading-7 text-ink-2">
+                <p className="mt-5 text-base leading-7 text-ink-2">
                   {blurb}
                 </p>
               </Card>

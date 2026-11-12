@@ -32,10 +32,10 @@ export function ScrollProgress() {
   return (
     <div
       aria-hidden="true"
-      className="pointer-events-none absolute inset-x-0 bottom-[-1px] h-px"
+      className="pointer-events-none absolute inset-x-0 bottom-[-1px] h-0.5"
     >
       <div
-        className="h-full origin-left bg-gradient-to-r from-plum via-rose to-gold"
+        className="h-full origin-left bg-brand"
         style={{ transform: `scaleX(${progress})` }}
       />
     </div>
