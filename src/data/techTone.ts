@@ -61,7 +61,7 @@ assign("gold", [
 
 assign("rose", ["Pest", "Pest PHP", "PHPUnit", "TDD", "Unit Tests"]);
 
-assign("terracotta", ["WordPress", "Elementor", "Plugins", "SEO"]);
+assign("terracotta", ["CMS", "WordPress", "Elementor", "Plugins", "SEO"]);
 
 export function toneForTech(tech: string): Tone {
   return toneByTech[tech.toLowerCase()] ?? "neutral";

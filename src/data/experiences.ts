@@ -4,17 +4,19 @@ export const experiences: Experience[] = [
     {
     company: "Daystar University",
     role: "Web Developer",
-    dates: "August 2026 - October 2026",
+    dates: "August 2026 — December 2026",
     highlights: [
       "Contributed to the redesign and redevelopment of Daystar University's website, creating a more modern and consistent digital experience.",
       "Redesigned and developed websites for the university's schools and directorates, adapting shared layouts and components to the needs of different departments.",
       "Implemented responsive layouts, navigation, content sections, and interactive features across multiple institutional websites.",
+      "Built and integrated a content management system (CMS) that lets university staff create, edit, and publish content across the school and directorate websites without developer involvement.",
     ],
     tech: [
       "Laravel",
       "Blade",
+      "CMS",
       "CSS",
-      "Javascript"
+      "JavaScript",
     ],
   },
   {
