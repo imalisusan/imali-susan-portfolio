@@ -58,7 +58,7 @@ export const experiences: Experience[] = [
     role: "Software Engineering Contractor",
     dates: "March 2025 — June 2026",
     highlights: [
-      "Collaborated remotely with cross-functional teams to enhance and maintain internal tools supporting child sponsorship and donor management systems.",
+      "Collaborated with cross-functional teams to enhance and maintain internal tools supporting child sponsorship and donor management systems.",
       "Contributed to scalable backend services and RESTful APIs using CodeIgniter (MVC) with clean code principles.",
       "Worked with test-driven development, user acceptance testing, and API-driven automation to improve operational efficiency.",
     ],
