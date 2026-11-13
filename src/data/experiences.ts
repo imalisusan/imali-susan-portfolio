@@ -1,8 +1,19 @@
 import type { Experience } from "@/types/portfolio";
+import amtLogo from "@/assets/logos/amt.png";
+import compassionLogo from "@/assets/logos/compassion.svg";
+import dawitLogo from "@/assets/logos/dawit.png";
+import daystarLogo from "@/assets/logos/daystar.png";
+import frogLogo from "@/assets/logos/frog.png";
+import oceanSoleLogo from "@/assets/logos/oceansole.png";
+import pulaposLogo from "@/assets/logos/pulapos.png";
+import shuziaLogo from "@/assets/logos/shuzia.png";
+import wonderkidLogo from "@/assets/logos/wonderkid.png";
 
 export const experiences: Experience[] = [
   {
-    company: "Wonderkid Media",
+    company: "Wonderkid Multimedia",
+    logo: wonderkidLogo,
+    logoBg: "#0d1929",
     role: "FullStack Laravel Developer Contractor",
     dates: "November 2024 — Present",
     highlights: [
@@ -24,6 +35,7 @@ export const experiences: Experience[] = [
   },
   {
     company: "Daystar University",
+    logo: daystarLogo,
     role: "Web Developer",
     dates: "August 2026 — December 2026",
     highlights: [
@@ -42,6 +54,7 @@ export const experiences: Experience[] = [
   },
   {
     company: "Compassion International",
+    logo: compassionLogo,
     role: "Software Engineering Contractor",
     dates: "March 2025 — June 2026",
     highlights: [
@@ -64,6 +77,8 @@ export const experiences: Experience[] = [
   },
   {
     company: "PulaPOS",
+    logo: pulaposLogo,
+    logoBg: "#fe0000",
     role: "Laravel Backend Developer",
     dates: "January 2024 — November 2024",
     highlights: [
@@ -88,6 +103,7 @@ export const experiences: Experience[] = [
   },
   {
     company: "Dawit Insurance Agency",
+    logo: dawitLogo,
     role: "FullStack PHP Developer",
     dates: "September 2023 — May 2024",
     highlights: [
@@ -110,6 +126,7 @@ export const experiences: Experience[] = [
   },
   {
     company: "Shuzia",
+    logo: shuziaLogo,
     role: "FullStack PHP Developer",
     dates: "January 2023 — July 2023",
     highlights: [
@@ -130,6 +147,7 @@ export const experiences: Experience[] = [
   },
   {
     company: "AMT Technologies",
+    logo: amtLogo,
     role: "Backend Software Development Intern",
     dates: "February 2022 — April 2022",
     highlights: [
@@ -140,6 +158,8 @@ export const experiences: Experience[] = [
   },
   {
     company: "Frog Technologies",
+    logo: frogLogo,
+    logoBg: "#050a30",
     role: "FullStack PHP Development Intern (Part-Time)",
     dates: "July 2020 — August 2022",
     highlights: [
@@ -159,6 +179,7 @@ export const experiences: Experience[] = [
   },
   {
     company: "Ocean Sole",
+    logo: oceanSoleLogo,
     role: "ICT Intern",
     dates: "March 2018 — March 2019",
     highlights: [

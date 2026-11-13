@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { experiences } from "@/data/experiences";
 import { TechList } from "@/components/ui/Chip";
 import { Reveal } from "@/components/ui/Reveal";
@@ -21,6 +22,28 @@ export function ExperienceSection() {
           >
             <article className="group grid gap-x-12 gap-y-4 border-b border-night-rule py-10 lg:grid-cols-[18rem_minmax(0,1fr)]">
               <div>
+                {/* One tile height for every company, so the wide wordmarks,
+                    the round Ocean Sole badge and the initials sit level. */}
+                <span
+                  className="mb-5 inline-flex h-16 min-w-16 items-center justify-center rounded-2xl border border-night-rule bg-white px-3"
+                  style={exp.logoBg ? { backgroundColor: exp.logoBg } : undefined}
+                >
+                  {exp.logo ? (
+                    <Image
+                      src={exp.logo}
+                      alt={`${exp.company} logo`}
+                      sizes="10rem"
+                      className="h-10 w-auto max-w-[10rem] object-contain"
+                    />
+                  ) : (
+                    <span
+                      aria-hidden="true"
+                      className="font-display text-lg font-extrabold tracking-wide text-brand-ink"
+                    >
+                      {exp.initials}
+                    </span>
+                  )}
+                </span>
                 <p className="font-display text-sm font-semibold text-brand-soft">
                   {exp.dates}
                 </p>
